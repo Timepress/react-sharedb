@@ -6,8 +6,8 @@
   "scripts": {
     "test": "PORT=3333 mocha ./test/**/*.mocha.js --bail --reporter spec --require @babel/polyfill --compilers js:@babel/register --require ./test/_client",
     "format": "echo Run prettify twice && npm run -S _prettify && npm run -S _prettify",
-    "prepublish": "babel --optional runtime src --out-dir lib",
-    "postpublish": "rm -rf lib",
+    "prepare": "babel --optional runtime src --out-dir lib",
+    "prepublishOnly": "rm -rf lib",
     "precommit": "lint-staged && npm test",
     "_prettify": "prettier-standard '{src,test}/**/*.{js,jsx}'"
   },
@@ -21,11 +21,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.54",
     "@nx-js/observer-util": "^4.1.3",
-    "@react-sharedb/model": "http://github.com/timepress/react-sharedb-model",
+    "@react-sharedb/model": "github:timepress/react-sharedb-model",
     "hoist-non-react-statics": "^1.2.0",
-    "lodash": "4.x",
-    "@babel/runtime": "^7.0.0-beta.54"
+    "lodash": "4.x"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.54",
