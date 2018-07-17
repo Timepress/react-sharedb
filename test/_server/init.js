@@ -1,7 +1,7 @@
-import 'babel-register'
+import '@babel/register'
 import http from 'http'
 import express from 'express'
-import racer, { Model } from 'racer'
+import racer from 'racer'
 import shareDbMongo from 'sharedb-mongo'
 import racerHighway from 'racer-highway'
 import { exec } from 'child_process'
@@ -16,6 +16,8 @@ const PORT = process.env.PORT || 3000
 const FIXTURES_PATH = __dirname + '/../fixtures'
 
 let mongo, backend
+
+const Model = racer.Model
 
 // Promisify the default model methods like subscribe, fetch, set, push, etc.
 promisifyAll(Model.prototype)

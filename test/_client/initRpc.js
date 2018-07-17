@@ -1,6 +1,8 @@
 import racer from 'racer'
 import racerRpc from 'racer-rpc'
-import { model } from '../../src'
+import { initGlobalObservablesFnc, model } from '../../src'
+
+initGlobalObservablesFnc()
 
 // RPC support
 racer.use(racerRpc)

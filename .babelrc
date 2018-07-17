@@ -1,8 +1,35 @@
 {
-  "presets": ["es2015", "stage-0", "react"],
+  "presets": [
+    "@babel/preset-env",
+    [
+      "@babel/preset-stage-0",
+      {
+        "decoratorsLegacy": true
+      }
+    ],
+    "@babel/preset-react"
+  ],
   "plugins": [
-    "add-module-exports",
-    "transform-runtime",
-    "transform-decorators-legacy"
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "helpers": true,
+        "polyfill": true,
+        "regenerator": true,
+        "moduleName": "@babel/runtime"
+      }
+    ],
+    ["@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose" : true
+      }
+    ],
+    "@babel/plugin-transform-classes"
   ]
 }
