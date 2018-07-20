@@ -22,10 +22,11 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.54",
-    "@nx-js/observer-util": "^4.1.3",
+    "@nx-js/observer-util": "github:timepress/observer-util",
     "@react-sharedb/model": "github:timepress/react-sharedb-model",
     "hoist-non-react-statics": "^1.2.0",
-    "lodash": "4.x"
+    "lodash": "4.x",
+    "proxy-polyfill": "^0.3.0"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.54",
