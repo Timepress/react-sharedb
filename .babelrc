@@ -4,7 +4,7 @@
       "@babel/preset-env",
       {
         "targets": {
-          "esmodules": true
+          "browsers": ["last 2 versions", "ie >= 11"]
         }
       }
     ],
@@ -20,7 +20,7 @@
     [
       "@babel/plugin-transform-runtime",
       {
-        "helpers": true,
+        "helpers": false,
         "polyfill": true,
         "regenerator": true,
         "moduleName": "@babel/runtime"
@@ -37,5 +37,9 @@
         "loose" : true
       }
     ]
-  ]
+  ],
+  "env": {
+    "development": {
+    }
+  }
 }
